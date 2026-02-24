@@ -11,7 +11,6 @@ public class BoatTransitManager : MonoBehaviour
 
     [Header("Button References")]
     public GameObject headToReefButton;
-    public GameObject setUpSolarPanelButton;
 
     [Header("Settings")]
     public float transitDuration = 5.0f;
@@ -55,7 +54,6 @@ public class BoatTransitManager : MonoBehaviour
         playerController.transform.SetParent(null);
 
         TogglePlayerMovement(true);
-        setUpSolarPanelButton.SetActive(true);
     }
 
     private void TogglePlayerMovement(bool canMove)

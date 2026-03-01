@@ -1,45 +1,64 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BoatAudio : MonoBehaviour
 {
-    // Start is called before the first frame update
     public AudioSource audioSource;
 
     public AudioClip boatIntroClip;
     public AudioClip solarPanelClip;
     public AudioClip reefClip;
 
+    public AudioClip walkieTalkieClip;
+    public AudioClip overWalkieClip;
+
     private bool boatAudioPlayed = false;
-    
+    private bool isPlaying = false;
+
     void Start()
     {
         StartCoroutine(PlayIntroAfterDelay());
     }
+
     IEnumerator PlayIntroAfterDelay()
     {
         yield return new WaitForSeconds(1f);
-        audioSource.PlayOneShot(boatIntroClip);
+        yield return StartCoroutine(PlayWithWalkie(boatIntroClip));
     }
 
     public void PlaySolarPanelAudio()
     {
-        if (!boatAudioPlayed)
+        if (!boatAudioPlayed && !isPlaying)
         {
-            audioSource.PlayOneShot(solarPanelClip);
             boatAudioPlayed = true;
+            StartCoroutine(PlayWithWalkie(solarPanelClip));
         }
     }
 
     public void PlayReefAudio()
     {
-        audioSource.PlayOneShot(reefClip);
+        if (!isPlaying)
+        {
+            StartCoroutine(PlayWithWalkie(reefClip));
+        }
     }
 
-    // Update is called once per frame
-    // void Update()
-    // {
-        
-    // }
+    IEnumerator PlayWithWalkie(AudioClip mainClip)
+    {
+        isPlaying = true;
+
+        // Play walkie start sound
+        audioSource.PlayOneShot(walkieTalkieClip);
+        yield return new WaitForSeconds(walkieTalkieClip.length);
+
+        // Play main dialogue
+        audioSource.PlayOneShot(mainClip);
+        yield return new WaitForSeconds(mainClip.length);
+
+        // Play walkie end sound
+        audioSource.PlayOneShot(overWalkieClip);
+        yield return new WaitForSeconds(overWalkieClip.length);
+
+        isPlaying = false;
+    }
 }

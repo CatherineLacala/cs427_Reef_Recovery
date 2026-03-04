@@ -50354,7 +50354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waterLevel: 146.59
-  buoyancyForce: 20
+  buoyancyForce: 50
   underwaterDrag: 3
 --- !u!54 &1477776063
 Rigidbody:

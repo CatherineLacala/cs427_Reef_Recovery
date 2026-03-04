@@ -6,7 +6,7 @@ using UnityEngine;
 public class SwimmingController : MonoBehaviour
 {
     public float waterLevel = 0f;
-    public float buoyancyForce = 10f;
+    public float buoyancyForce = 50f;
     public float underwaterDrag = 3f;
 
     private Rigidbody rb;

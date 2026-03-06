@@ -4,21 +4,33 @@ using UnityEngine;
 
 public class SkyboxSwitch : MonoBehaviour
 {
-    public Material sky1;
-    public Material sky2;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Material sky1;          // Skybox for underwater
+    public Material sky2;          // Skybox for above water
+    public Transform waterSurface;
+    public Transform head;
 
-    // Update is called once per frame
+    private bool isUnderwater = false;
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Y)) {
-            RenderSettings.skybox = sky1;
-            
+        // if head is below water surface
+        if (head.position.y < waterSurface.position.y)
+        {
+            // switch to sky1
+            if (!isUnderwater)
+            {
+                RenderSettings.skybox = sky1;
+                isUnderwater = true;
+            }
         }
-
+        else
+        {
+            // switch to sky2
+            if (isUnderwater)
+            {
+                RenderSettings.skybox = sky2;
+                isUnderwater = false;
+            }
+        }
     }
 }

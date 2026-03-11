@@ -70,7 +70,7 @@ public class BoatAudio : MonoBehaviour
 
     public void PlayDeepOntoReefAudio()
     {
-        if (!deepOntoReefAudioPlayed && (playerTransform.transform.position.y < depthThreshold1) && !isPlaying)
+        if (!deepOntoReefAudioPlayed && (playerTransform.transform.position.y < depthThreshold2) && !isPlaying)
         {
             //StartCoroutine(PlayWithWalkie(deepOntoReefClip));
             print("debug: audio played");

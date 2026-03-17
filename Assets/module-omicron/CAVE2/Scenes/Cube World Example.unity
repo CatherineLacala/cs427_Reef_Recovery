@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -48549,7 +48549,7 @@ PrefabInstance:
         improve comprehension of long-term environmental processes\r\n\nContribution
         to SDG 14: Life Below Water\r\n- Shows cause-and-effect relationships between
         human behavior and reef health\r\n- Encourages and demonstrates actionable
-        solutions such as reef protection and pollution reduction\r"
+        solutions such as implementing reef acoustic playback systems (RAPS)\r"
       objectReference: {fileID: 0}
     - target: {fileID: 114000011641407824, guid: c1621f4dd1e8c2748a5a423aa7736d55,
         type: 3}
@@ -48569,6 +48569,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: "Catherine Lacala\nEvelyn Johnson\nJackie Mei\r\nBrian Wilk"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010683909002, guid: c1621f4dd1e8c2748a5a423aa7736d55,
+        type: 3}
+      propertyPath: m_Text
+      value: "Based on our research, there are new studies that highlight the influence
+        of using RAPS to enhance the settlement of coral larvae, which are fundamental
+        in sustaining coral reefs. \n\nRAPS helps support both healthy and reefs that
+        are undergoing restoration using acoustic reef soundscapes such as ocean chirps
+        and signals from the antenna of spiny lobsters. \n\nThis immersive experience
+        offers insight into the potential of some reef restoration strategies."
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1621f4dd1e8c2748a5a423aa7736d55, type: 3}

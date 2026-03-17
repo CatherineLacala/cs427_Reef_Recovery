@@ -23144,8 +23144,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 1477776064}
   audioSource: {fileID: 705759044}
-  boatIntroClip: {fileID: 8300000, guid: 5bb6a24c59cad354ba30da339cde06be, type: 3}
-  solarPanelClip: {fileID: 8300000, guid: 1cf690bba3973a14b8393f64806d0416, type: 3}
+  boatIntroClip: {fileID: 8300000, guid: 461ae3916a129cd43986b5da7ddeed47, type: 3}
+  solarPanelClip: {fileID: 8300000, guid: 0abec177217ffc9489c729b338920607, type: 3}
   reefClip: {fileID: 8300000, guid: 0966785f34f321b4081b1f76b0b327dd, type: 3}
   deepIntoWaterClip: {fileID: 0}
   deepOntoReefClip: {fileID: 0}

@@ -23146,7 +23146,7 @@ MonoBehaviour:
   audioSource: {fileID: 705759044}
   boatIntroClip: {fileID: 8300000, guid: 461ae3916a129cd43986b5da7ddeed47, type: 3}
   solarPanelClip: {fileID: 8300000, guid: 0abec177217ffc9489c729b338920607, type: 3}
-  reefClip: {fileID: 8300000, guid: 0966785f34f321b4081b1f76b0b327dd, type: 3}
+  reefClip: {fileID: 8300000, guid: 1e309039473ec174c8bd89071744e541, type: 3}
   deepIntoWaterClip: {fileID: 0}
   deepOntoReefClip: {fileID: 0}
   walkieTalkieClip: {fileID: 8300000, guid: c94b08e75ae2472469ce234116c66b36, type: 3}

@@ -5,9 +5,9 @@ public class deployableItem : CAVE2Interactable
 {
     [Header("Grab Settings")]
     [SerializeField] CAVE2.Button grabButton = CAVE2.Button.Button3;
-    [SerializeField] float shrinkScale = 0.2f;
+    [SerializeField] float shrinkScale = 0.02f;
     [SerializeField] float shrinkDuration = 0.25f;
-    [SerializeField] Vector3 heldOffsetOnWand = new Vector3(-0.2f, -0.05f, 0.1f);
+    [SerializeField] Vector3 screenOffset = new Vector3(-0.2f, -0.05f, 0.1f);
 
     [Header("Rotation Settings")]
     [SerializeField] bool enableRotation = true;
@@ -33,9 +33,16 @@ public class deployableItem : CAVE2Interactable
 
         if (enableRotation)
         {
-            Vector3 currentWorldCenter = transform.TransformPoint(localCenterOffset);
-            Vector3 currentWorldAxis = transform.TransformDirection(rotationAxis);
-            transform.RotateAround(currentWorldCenter, currentWorldAxis, rotationSpeed * Time.deltaTime);
+            if (IsGrabbed)
+            {
+                transform.Rotate(rotationAxis, rotationSpeed * Time.deltaTime, Space.Self);
+            }
+            else
+            {
+                Vector3 currentWorldCenter = transform.TransformPoint(localCenterOffset);
+                Vector3 currentWorldAxis = transform.TransformDirection(rotationAxis);
+                transform.RotateAround(currentWorldCenter, currentWorldAxis, rotationSpeed * Time.deltaTime);
+            }
         }
     }
 
@@ -79,8 +86,10 @@ public class deployableItem : CAVE2Interactable
             rb.isKinematic = true;
         }
 
-        transform.SetParent(wand);
-        transform.localPosition = heldOffsetOnWand - localCenterOffset;
+        Transform mainCam = Camera.main.transform;
+        transform.SetParent(mainCam);
+        transform.localPosition = screenOffset;
+        transform.localRotation = Quaternion.identity;
         StartCoroutine(ShrinkObjectSmoothly(originalScale * shrinkScale));
     }
 

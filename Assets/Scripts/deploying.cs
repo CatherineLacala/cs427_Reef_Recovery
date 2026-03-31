@@ -11,7 +11,7 @@ public class deploying : CAVE2Interactable
         if (evt.button == deployButton)
         {
             Transform wand = CAVE2.GetWandObject(evt.wandID).transform;
-            deployableItem heldItem = wand.GetComponentInChildren<deployableItem>();
+            deployableItem heldItem = Camera.main.GetComponentInChildren<deployableItem>();
 
             if (heldItem != null && heldItem.IsGrabbed)
             {

@@ -6,6 +6,11 @@ public class deploying : CAVE2Interactable
     [SerializeField] CAVE2.Button deployButton = CAVE2.Button.Button3;
     [SerializeField] GameObject prefabToDeploy;
 
+    [Header("Audio Settings")]
+    [SerializeField] AudioClip milestoneAudioClip;
+
+    private static int totalDeployedCount = 0;
+
     new void OnWandButtonDown(CAVE2.WandEvent evt)
     {
         if (evt.button == deployButton)
@@ -28,8 +33,14 @@ public class deploying : CAVE2Interactable
                         spawnPosition = hit.point;
                     }
 
-
                     Instantiate(prefabToDeploy, spawnPosition, transform.rotation);
+
+                    totalDeployedCount++;
+
+                    if (totalDeployedCount == 2 && milestoneAudioClip != null)
+                    {
+                        AudioSource.PlayClipAtPoint(milestoneAudioClip, spawnPosition);
+                    }
                 }
 
                 Destroy(gameObject);

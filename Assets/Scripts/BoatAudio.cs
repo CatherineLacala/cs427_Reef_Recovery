@@ -26,19 +26,19 @@ public class BoatAudio : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(PlayIntroAfterDelay());
-    }
+        //StartCoroutine(PlayIntroAfterDelay());
+    }
 
     void Update()
     {
-        PlayDeepIntoWaterAudio();
-        PlayDeepOntoReefAudio();
+        //PlayDeepIntoWaterAudio();
+        //PlayDeepOntoReefAudio();
     }
 
     IEnumerator PlayIntroAfterDelay()
     {
         yield return new WaitForSeconds(1f);
-        yield return StartCoroutine(PlayWithWalkie(boatIntroClip));
+        //yield return StartCoroutine(PlayWithWalkie(boatIntroClip));
     }
 
     public void PlaySolarPanelAudio()
@@ -46,16 +46,16 @@ public class BoatAudio : MonoBehaviour
         if (!boatAudioPlayed && !isPlaying)
         {
             boatAudioPlayed = true;
-            StartCoroutine(PlayWithWalkie(solarPanelClip));
+            //StartCoroutine(PlayWithWalkie(solarPanelClip));
         }
     }
 
     public void PlayReefAudio()
     {
-        if (!isPlaying)
-        {
-            StartCoroutine(PlayWithWalkie(reefClip));
-        }
+        //if (!isPlaying)
+        //{
+        //    StartCoroutine(PlayWithWalkie(reefClip));
+        //}
     }
 
     public void PlayDeepIntoWaterAudio()
@@ -82,17 +82,30 @@ public class BoatAudio : MonoBehaviour
     {
         isPlaying = true;
 
-        // Play walkie start sound
-        audioSource.PlayOneShot(walkieTalkieClip);
-        yield return new WaitForSeconds(walkieTalkieClip.length);
+
+        // Play walkie start sound
+        //audioSource.PlayOneShot(walkieTalkieClip);
+        yield return new WaitForSeconds(0);
 
         // Play main dialogue
-        audioSource.PlayOneShot(mainClip);
-        yield return new WaitForSeconds(mainClip.length);
+        //audioSource.PlayOneShot(mainClip);
+        yield return new WaitForSeconds(0);
 
         // Play walkie end sound
-        audioSource.PlayOneShot(overWalkieClip);
-        yield return new WaitForSeconds(overWalkieClip.length);
+        //audioSource.PlayOneShot(overWalkieClip);
+        yield return new WaitForSeconds(0);
+
+        //// Play walkie start sound
+        //audioSource.PlayOneShot(walkieTalkieClip);
+        //yield return new WaitForSeconds(walkieTalkieClip.length);
+
+        //// Play main dialogue
+        //audioSource.PlayOneShot(mainClip);
+        //yield return new WaitForSeconds(mainClip.length);
+
+        //// Play walkie end sound
+        //audioSource.PlayOneShot(overWalkieClip);
+        //yield return new WaitForSeconds(overWalkieClip.length);
 
         isPlaying = false;
     }

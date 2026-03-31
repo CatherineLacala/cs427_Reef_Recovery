@@ -5,12 +5,14 @@ using UnityEngine;
 public class BoatTrigger : MonoBehaviour
 {
     public BoatAudio audioManager;
+    public AudioClip boatNoise;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            audioManager.PlaySolarPanelAudio();
+            //audioManager.PlaySolarPanelAudio();
+            audioManager.audioSource.PlayOneShot(boatNoise);
         }
     }
     // Start is called before the first frame update

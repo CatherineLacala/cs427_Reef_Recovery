@@ -17398,6 +17398,25 @@ Transform:
   m_Father: {fileID: 2102249725}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &379392731 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 413339dbbc52e4e44a563d9f8e19340c,
+    type: 3}
+  m_PrefabInstance: {fileID: 553485678}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &379392734
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379392731}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 14.933422, y: 5.437945, z: 7.235003}
+  m_Center: {x: 0.11004068, y: 2.124244, z: -0.16430618}
 --- !u!1 &381869279
 GameObject:
   m_ObjectHideFlags: 0
@@ -70935,6 +70954,25 @@ Transform:
   m_Father: {fileID: 1131378219}
   m_RootOrder: 83
   m_LocalEulerAnglesHint: {x: 0, y: 100.68301, z: 0}
+--- !u!1 &1365290088 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 9759fb3c5a5198e4b928b7cda7b8d139,
+    type: 3}
+  m_PrefabInstance: {fileID: 1714853952}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1365290091
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365290088}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30.60435, y: 10.672737, z: 17.552938}
+  m_Center: {x: 0.29062375, y: 3.4445248, z: -0.6928575}
 --- !u!1 &1366771595
 GameObject:
   m_ObjectHideFlags: 0
@@ -83303,6 +83341,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1623575954}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1626778143 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 9759fb3c5a5198e4b928b7cda7b8d139,
+    type: 3}
+  m_PrefabInstance: {fileID: 562609129}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1626778146
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626778143}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30.604345, y: 10.672737, z: 17.552937}
+  m_Center: {x: 0.2906018, y: 3.4445248, z: -0.6928155}
 --- !u!1 &1627312522
 GameObject:
   m_ObjectHideFlags: 0
@@ -94966,6 +95023,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1836221715}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1836612902 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 9759fb3c5a5198e4b928b7cda7b8d139,
+    type: 3}
+  m_PrefabInstance: {fileID: 108291385}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1836612905
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836612902}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30.604342, y: 10.672737, z: 17.552935}
+  m_Center: {x: 0.29060748, y: 3.4445248, z: -0.69286114}
 --- !u!1 &1837773544
 GameObject:
   m_ObjectHideFlags: 0
@@ -96526,6 +96602,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1862849486}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1864943775 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 9759fb3c5a5198e4b928b7cda7b8d139,
+    type: 3}
+  m_PrefabInstance: {fileID: 1917323189}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1864943778
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864943775}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30.60435, y: 10.672737, z: 17.552938}
+  m_Center: {x: 0.29061756, y: 3.4445248, z: -0.69283843}
 --- !u!1001 &1865980280
 PrefabInstance:
   m_ObjectHideFlags: 0

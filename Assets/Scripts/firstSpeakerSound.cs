@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +8,8 @@ public class firstSpeakerSound : CAVE2Interactable
     private AudioSource audioSource;
     public AudioClip loopClip;
     private bool isLooping = false;
+
+    public static Boolean firstIsPlayed = false;
 
     void Start()
     {
@@ -27,6 +30,11 @@ public class firstSpeakerSound : CAVE2Interactable
             {
                 audioSource.Play();
                 isLooping = true;
+            }
+
+            if (!firstIsPlayed)
+            {
+                firstIsPlayed = true;
             }
         }
     }

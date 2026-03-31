@@ -6,6 +6,12 @@ using UnityEngine;
 
 public class GrowCoral : MonoBehaviour
 {
+    [Header("Wait Settings")]
+    [SerializeField] int targetDeployCount = 2;
+    [SerializeField] float delayAfterAllDeployed = 5f;
+    [SerializeField] AudioClip milestoneAudioClip;
+
+    [Header("Growth Settings")]
     public float delayStartGrow = 120f; //waiting 2 minutes before growing
     //public float growSpeed = 0.1f; //speed of how fast the coral grows
     public float growDuration = 5f; //takes 5 seconds for coral to grow
@@ -21,10 +27,18 @@ public class GrowCoral : MonoBehaviour
 
     IEnumerator StartGrowth()
     {
-        //waiting 2 minutes before growing
-        yield return new WaitForSeconds(delayStartGrow);
+        while (deploying.totalDeployedCount < targetDeployCount || !firstSpeakerSound.firstIsPlayed)
+        {
+            yield return new WaitForSeconds(0.5f);
+        }
 
-        //start growing each individual coral piece
+        yield return new WaitForSeconds(delayAfterAllDeployed);
+
+        if (milestoneAudioClip != null)
+        {
+            AudioSource.PlayClipAtPoint(milestoneAudioClip, transform.position);
+        }
+
         foreach (Transform coral in transform)
         {
             StartCoroutine(GrowSingleCoral(coral));

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Rendering;
 
 public class deploying : CAVE2Interactable
 {
@@ -7,9 +8,9 @@ public class deploying : CAVE2Interactable
     [SerializeField] GameObject prefabToDeploy;
 
     [Header("Audio Settings")]
-    [SerializeField] AudioClip milestoneAudioClip;
+    [SerializeField] AudioClip[] deployLoopSounds;
 
-    private static int totalDeployedCount = 0;
+    public static int totalDeployedCount = 0;
 
     new void OnWandButtonDown(CAVE2.WandEvent evt)
     {
@@ -33,18 +34,31 @@ public class deploying : CAVE2Interactable
                         spawnPosition = hit.point;
                     }
 
-                    Instantiate(prefabToDeploy, spawnPosition, transform.rotation);
-
+                    GameObject spawnedObject = Instantiate(prefabToDeploy, spawnPosition, transform.rotation);
+                    AttachLoopingAudio(spawnedObject);
                     totalDeployedCount++;
-
-                    if (totalDeployedCount == 2 && milestoneAudioClip != null)
-                    {
-                        AudioSource.PlayClipAtPoint(milestoneAudioClip, spawnPosition);
-                    }
                 }
 
                 Destroy(gameObject);
             }
+        }
+    }
+
+    void AttachLoopingAudio(GameObject target)
+    {
+        if (deployLoopSounds.Length == 0) return;
+        int soundIndex = Mathf.Clamp(totalDeployedCount, 0, deployLoopSounds.Length - 1);
+        AudioClip clipToPlay = deployLoopSounds[soundIndex];
+
+        if (clipToPlay != null)
+        {
+            AudioSource source = target.AddComponent<AudioSource>();
+            source.clip = clipToPlay;
+            source.loop = true;
+            source.spatialBlend = 1.0f;
+            source.minDistance = 1.0f;
+            source.playOnAwake = true;
+            source.Play();
         }
     }
 }

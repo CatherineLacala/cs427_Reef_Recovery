@@ -42,6 +42,9 @@ public class GrowCoral : MonoBehaviour
         foreach (Transform coral in transform)
         {
             StartCoroutine(GrowSingleCoral(coral));
+
+
+            // TODO: spawn fish
         }
     }
 

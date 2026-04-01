@@ -99791,7 +99791,7 @@ MonoBehaviour:
     type: 3}
   deployLoopSounds:
   - {fileID: 8300000, guid: 4be22278876c442489ae120776b6e1e1, type: 3}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 91040f9db4a310e46980e05e97bd7534, type: 3}
 --- !u!82 &1867567576
 AudioSource:
   m_ObjectHideFlags: 0
@@ -101072,7 +101072,7 @@ MonoBehaviour:
     type: 3}
   deployLoopSounds:
   - {fileID: 8300000, guid: 4be22278876c442489ae120776b6e1e1, type: 3}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 91040f9db4a310e46980e05e97bd7534, type: 3}
 --- !u!82 &1891807406
 AudioSource:
   m_ObjectHideFlags: 0

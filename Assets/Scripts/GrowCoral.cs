@@ -10,6 +10,7 @@ public class GrowCoral : MonoBehaviour
     [SerializeField] int targetDeployCount = 2;
     [SerializeField] float delayAfterAllDeployed = 5f;
     [SerializeField] AudioClip milestoneAudioClip;
+    [SerializeField] AudioSource milestoneAudioSource;
 
     [Header("Growth Settings")]
     public float delayStartGrow = 120f; //waiting 2 minutes before growing
@@ -34,10 +35,11 @@ public class GrowCoral : MonoBehaviour
 
         yield return new WaitForSeconds(delayAfterAllDeployed);
 
-        if (milestoneAudioClip != null)
+        if (milestoneAudioClip != null && milestoneAudioSource != null)
         {
-            AudioSource.PlayClipAtPoint(milestoneAudioClip, transform.position);
+            milestoneAudioSource.PlayOneShot(milestoneAudioClip);
         }
+
 
         foreach (Transform coral in transform)
         {

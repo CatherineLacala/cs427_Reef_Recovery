@@ -1,29 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BoatTrigger : MonoBehaviour
 {
-    public BoatAudio audioManager;
+    public BackgroundAudio audioManager;
     public AudioClip boatNoise;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            //audioManager.PlaySolarPanelAudio();
-            audioManager.audioSource.PlayOneShot(boatNoise);
+            if (audioManager != null && audioManager.oneShotSource != null)
+            {
+                audioManager.oneShotSource.PlayOneShot(boatNoise);
+            }
         }
     }
-    // Start is called before the first frame update
-    // void Start()
-    // {
-        
-    // }
-
-    // // Update is called once per frame
-    // void Update()
-    // {
-        
-    // }
 }

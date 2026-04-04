@@ -52,13 +52,13 @@ public class deploying : CAVE2Interactable
 
         if (clipToPlay != null)
         {
-            AudioSource source = target.AddComponent<AudioSource>();
-            source.clip = clipToPlay;
-            source.loop = true;
-            source.spatialBlend = 1.0f;
-            source.minDistance = 1.0f;
-            source.playOnAwake = true;
-            source.Play();
+            //AudioSource source = target.AddComponent<AudioSource>();
+            //source.clip = clipToPlay;
+            //source.loop = true;
+            //source.spatialBlend = 1.0f;
+            //source.minDistance = 1.0f;
+            //source.playOnAwake = true;
+            //source.Play();
         }
     }
 }

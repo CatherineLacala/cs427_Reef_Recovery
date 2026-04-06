@@ -10,6 +10,10 @@ public class deploying : CAVE2Interactable
     [Header("Audio Settings")]
     [SerializeField] AudioClip[] deployLoopSounds;
 
+    [Header("Linked Environment")]
+    [Tooltip("Drag the specific invisible coral group for this area here.")]
+    [SerializeField] SpeakerReefTrigger linkedReef; 
+
     public static int totalDeployedCount = 0;
 
     new void OnWandButtonDown(CAVE2.WandEvent evt)
@@ -37,9 +41,19 @@ public class deploying : CAVE2Interactable
                     GameObject spawnedObject = Instantiate(prefabToDeploy, spawnPosition, transform.rotation);
                     AttachLoopingAudio(spawnedObject);
                     totalDeployedCount++;
+
+                    // Tell the linked reef to start growing!
+                    if (linkedReef != null)
+                    {
+                        linkedReef.OnSpeakerPlaced();
+                    }
+                    else
+                    {
+                        Debug.LogWarning("Speaker deployed, but no Reef is linked in the Inspector!");
+                    }
                 }
 
-                Destroy(gameObject);
+                Destroy(gameObject); // Destroys the deployment interactable so they can't place two here
             }
         }
     }
@@ -47,18 +61,26 @@ public class deploying : CAVE2Interactable
     void AttachLoopingAudio(GameObject target)
     {
         if (deployLoopSounds.Length == 0) return;
+        
         int soundIndex = Mathf.Clamp(totalDeployedCount, 0, deployLoopSounds.Length - 1);
         AudioClip clipToPlay = deployLoopSounds[soundIndex];
 
         if (clipToPlay != null)
         {
-            //AudioSource source = target.AddComponent<AudioSource>();
-            //source.clip = clipToPlay;
-            //source.loop = true;
-            //source.spatialBlend = 1.0f;
-            //source.minDistance = 1.0f;
-            //source.playOnAwake = true;
-            //source.Play();
+            AudioSource source = target.AddComponent<AudioSource>();
+            source.clip = clipToPlay;
+            source.loop = true;
+            
+            source.volume = 1.0f;      
+            source.spatialBlend = 1.0f;     
+            
+            source.minDistance = 5.0f;     
+            source.maxDistance = 30.0f;     
+            
+            source.rolloffMode = AudioRolloffMode.Logarithmic; 
+          
+            source.playOnAwake = true;
+            source.Play();
         }
     }
 }

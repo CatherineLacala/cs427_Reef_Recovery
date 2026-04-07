@@ -19,16 +19,11 @@ public class BoatTransitManager : MonoBehaviour
 
     public void StartBoatTransit()
     {
-        if (hasClicked) return;
-        hasClicked = true;
-
         StartCoroutine(TransitSequence());
     }
 
     private IEnumerator TransitSequence()
     {
-        headToReefButton.SetActive(false);
-
         TogglePlayerMovement(false);
 
         playerController.transform.position = playerBoatPosition.position;

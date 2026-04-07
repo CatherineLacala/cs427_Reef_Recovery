@@ -51,8 +51,21 @@ public class SpeakerTextSpawner : MonoBehaviour
         if (audioSource.clip != null)
         {
             string clipName = audioSource.clip.name;
-            if (clipName.Contains("Acoustic Fog")) wordToSpawn = "whoosh";
-            else if (clipName.Contains("Lobster")) wordToSpawn = "chirp";
+            
+           
+            if (clipName.Contains("Acoustic Fog")) 
+            {
+                wordToSpawn = "whoosh";
+            }
+            else if (clipName.Contains("Lobster")) 
+            {
+                wordToSpawn = "creak";
+            }
+            else if (clipName.Contains("Chirp")) 
+            {
+                wordToSpawn = "chirp";
+            }
+            // --------------------------
         }
 
         // ts spams the console so unless shits really fucked dont uncomment

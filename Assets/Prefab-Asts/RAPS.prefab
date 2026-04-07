@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 6024216703863414915}
   - component: {fileID: 5500224650077252250}
   - component: {fileID: 405772640923006174}
-  - component: {fileID: 1029073589847186589}
   - component: {fileID: 6491590992610773609}
+  - component: {fileID: 8481480550525766416}
   m_Layer: 0
   m_Name: RAPS
   m_TagString: Untagged
@@ -97,22 +97,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1029073589847186589
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1541004455395729749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1819ea01f3c84d8ebc67da17be806f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  floatingTextPrefab: {fileID: 2687019040378447523, guid: df091546782d34531b465b25efd9b524,
-    type: 3}
-  maxVolumeSpawnRate: 0.3
-  minVolumeSpawnRate: 2.5
 --- !u!114 &6491590992610773609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,6 +113,21 @@ MonoBehaviour:
     type: 3}
   maxVolumeSpawnRate: 0.3
   minVolumeSpawnRate: 2.5
+--- !u!114 &8481480550525766416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541004455395729749}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7402c2c230b5ec143a1bf255db364f9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wandPointing: 0
+  wandTouching: 0
+  loopClip: {fileID: 0}
 --- !u!65 &5088038209136487675
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -173,6 +172,21 @@ MonoBehaviour:
   floatingTextPrefab: {fileID: 0}
   maxVolumeSpawnRate: 0.3
   minVolumeSpawnRate: 2.5
+--- !u!114 &7265132829576807184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7630012215791074368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7402c2c230b5ec143a1bf255db364f9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wandPointing: 0
+  wandTouching: 0
+  loopClip: {fileID: 0}
 --- !u!65 &1040199038277453614
 BoxCollider:
   m_ObjectHideFlags: 0

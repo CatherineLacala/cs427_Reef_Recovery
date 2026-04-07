@@ -13,6 +13,7 @@ public class SpeakerReefTrigger : MonoBehaviour
     public float randomDelayMin = 1f;
     public float randomDelayMax = 3f;
 
+    public static int totalReefsFullyGrown = 0;
     private bool activated = false;
 
     // Call this when the speaker is placed
@@ -57,5 +58,8 @@ public class SpeakerReefTrigger : MonoBehaviour
         }
 
         coral.position = targetPosition;  //coral is in final position
+        
+        // Increment the static counter
+        totalReefsFullyGrown++;
     }
 }

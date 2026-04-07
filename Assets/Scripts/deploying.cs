@@ -16,6 +16,9 @@ public class deploying : CAVE2Interactable
 
     public static int totalDeployedCount = 0;
 
+    // This creates a global list to hold the audio sources we spawn
+    public static System.Collections.Generic.List<AudioSource> activeSpeakers = new System.Collections.Generic.List<AudioSource>();
+
     new void OnWandButtonDown(CAVE2.WandEvent evt)
     {
         if (evt.button == deployButton)
@@ -81,6 +84,8 @@ public class deploying : CAVE2Interactable
           
             source.playOnAwake = true;
             source.Play();
+
+            activeSpeakers.Add(source);
         }
     }
 }

@@ -31,10 +31,8 @@ public class deploying : CAVE2Interactable
                 {
                     Vector3 spawnPosition = transform.position;
 
-                    // shoot a raycast down
                     if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit))
                     {
-                        // when we hit the ground, make that where it spawns
                         spawnPosition = hit.point;
                     }
 
@@ -42,18 +40,20 @@ public class deploying : CAVE2Interactable
                     AttachLoopingAudio(spawnedObject);
                     totalDeployedCount++;
 
-                    // Tell the linked reef to start growing!
+                    // instead of instantly growing reef, add listener to speaker
                     if (linkedReef != null)
                     {
-                        linkedReef.OnSpeakerPlaced();
+                        CoralVolumeListener listener = spawnedObject.AddComponent<CoralVolumeListener>();
+                        listener.linkedReef = linkedReef; 
                     }
                     else
                     {
                         Debug.LogWarning("Speaker deployed, but no Reef is linked in the Inspector!");
                     }
+                    
                 }
 
-                Destroy(gameObject); // Destroys the deployment interactable so they can't place two here
+                Destroy(gameObject);
             }
         }
     }
@@ -71,7 +71,7 @@ public class deploying : CAVE2Interactable
             source.clip = clipToPlay;
             source.loop = true;
             
-            source.volume = 1.0f;      
+            source.volume = 0.0f;      
             source.spatialBlend = 1.0f;     
             
             source.minDistance = 5.0f;     

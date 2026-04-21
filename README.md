@@ -15,4 +15,6 @@ By integrating interactive design, visual storytelling, and environmental immers
 \
 Users are a member of the "Reef Recovery Diving Team," where they begin on land, setting up solar panels to generate power underwater for speaker soundsystems. After that, the user dives into the water and swims down to a dead coral reef. There, they will find the Reef Quarters, where "SPEAKER" typography is located. The user will pick up "SPEAKER" and place them in the pre-designated areas within the reef to install a speaker. Once placed, the user can increase or decrease the acoustic sounds played on the speaker. Based on the given location of the speaker, coral typography will begin to grow around the speaker's location as well as fish typography spawns in.
 
-### Video Demo ⏯️
+### Speaker Interaction Video Demo ⏯️
+
+https://drive.google.com/file/d/1j-g44i5bu_g7e-7K2rLO2uIfh8MnQOOe/view?usp=sharing 

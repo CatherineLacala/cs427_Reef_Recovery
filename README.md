@@ -18,3 +18,8 @@ Users are a member of the "Reef Recovery Diving Team," where they begin on land,
 ### Speaker Interaction Video Demo ⏯️
 
 https://drive.google.com/file/d/1j-g44i5bu_g7e-7K2rLO2uIfh8MnQOOe/view?usp=sharing 
+
+### Abstract 📑
+
+[ReefRecovery.pdf](https://github.com/user-attachments/files/26916097/ReefRecovery.pdf)
+
